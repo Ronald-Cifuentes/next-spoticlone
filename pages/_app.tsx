@@ -9,8 +9,8 @@ import PreviewPlayer from "../components/PreviewPlayer";
 import Sidebar from "../components/Sidebar";
 import PlayerProvider from "../context/PlayerContext";
 import { SpotifyProvider } from "../context/SpotifyContext";
-import "../styles/globals.css";
-import "../styles/nonTailwind.css";
+import "../styles/globals.scss";
+import "../styles/nonTailwind.scss";
 
 nProgress.configure({
   showSpinner: false,

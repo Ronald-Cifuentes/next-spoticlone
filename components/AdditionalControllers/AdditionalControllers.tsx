@@ -1,15 +1,20 @@
+import { FC } from "react";
+import { AdditionalControllersProps } from "./interfaces";
 import { MdOutlineMicExternalOn, MdQueueMusic } from "react-icons/md";
 import { RiVolumeUpLine } from "react-icons/ri";
 
-export default function AdditionalControllers() {
+const AdditionalControllers: FC<AdditionalControllersProps> = ({
+  dataTestId = "additional-controllers",
+}) => {
   return (
-    <div className="flex items-center col-span-2 gap-3">
-      {/* Icons */}
+    <div
+      data-testid={dataTestId}
+      className="AdditionalControllersContainer flex items-center col-span-2 gap-3"
+    >
       <MdOutlineMicExternalOn className="text-gray" />
       <MdQueueMusic className="text-gray" />
       <RiVolumeUpLine className="text-gray" />
 
-      {/* Volume bar */}
       <div className="w-20 mt-3">
         <div className="relative w-full pt-1 ">
           <div className="flex h-1 mb-4  overflow-hidden text-xs bg-[#535353] rounded">
@@ -19,4 +24,6 @@ export default function AdditionalControllers() {
       </div>
     </div>
   );
-}
+};
+
+export default AdditionalControllers;

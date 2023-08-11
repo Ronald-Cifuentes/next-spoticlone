@@ -6,7 +6,7 @@ import {
   MdSkipPrevious,
 } from "react-icons/md";
 import { usePlayer } from "../context/PlayerContext";
-import styles from "../styles/ProgressBar.module.css";
+import styles from "../styles/ProgressBar.module.scss";
 import { fmtMSS } from "../utils/formatDuration";
 
 export default function MainControllers() {
@@ -22,7 +22,6 @@ export default function MainControllers() {
 
   return (
     <div className="flex flex-col items-center justify-center col-span-7 gap-3">
-      {/* <pre>{JSON.stringify({ currentTime, duration }, null, 4)}</pre> */}
       <div className="flex items-center gap-5">
         <IoShuffle className="text-lg text-gray" />
         <MdSkipPrevious className="text-xl text-gray" />
@@ -30,7 +29,6 @@ export default function MainControllers() {
           onClick={togglePlay}
           className="flex items-center justify-center w-8 h-8 text-2xl text-black bg-white rounded-full focus:outline-none"
         >
-          {/* KMDK */}
           {isPlaying ? <MdPause /> : <MdPlayArrow />}
         </button>
         <MdSkipNext className="text-xl text-gray" />
