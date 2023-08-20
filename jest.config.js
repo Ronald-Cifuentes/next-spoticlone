@@ -16,9 +16,18 @@ module.exports = {
     },
   },
   transform: {
-    "^.+\\.[t|j]sx?$": "babel-jest",
-    "^.+\\.js$": "babel-jest",
-    // "^.+\\.(t|j)sx?$": ["@swc/jest"],
+    "^.+\\.(t|j)sx?$": [
+      "@swc/jest",
+      {
+        jsc: {
+          transform: {
+            react: {
+              runtime: "automatic",
+            },
+          },
+        },
+      },
+    ],
     ".+\\.(svg|css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$":
       "jest-transform-stub",
   },
